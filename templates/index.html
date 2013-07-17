@@ -1,0 +1,55 @@
+<!DOCTYPE HTML
+     PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>cmus Remote</title>
+   {% if message is defined %}
+   <meta HTTP-EQUIV="REFRESH" content="1; url={{path}}">
+   {% else %}
+   <meta HTTP-EQUIV="REFRESH" content="10; url={{path}}">
+   {% endif %}
+   <link rel="stylesheet" type="text/css" href="{{path}}/static/style.css">
+</head>
+<body>
+	<h1>cmus Remote</h1>
+
+	<div id="intro">
+		<p>Welcome to the cmus Remote! With this small application,
+		you can control the status of our favorite music player. Click any of
+		the following links to control cmus.</p>
+	</div>
+
+	{% if message is defined %}
+	<div class="message"><p>{{message}}<p></div>
+	{% elif actions is defined %}
+	<div id="actions_container">
+		<ul id="actions_list">
+			{% for action in actions %}
+			<li><a href="{{path}}/{{action}}">{% if action == hilite %}<span class="hilite">{{action}}</span>{% else %}{{action}}{% endif %}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+
+	<div id="status_container">
+		<table id="status_table">
+			<tr>
+				<td colspan=2 id="title">Now playing...</td>
+			</tr>
+			<tr>
+				<td class="key">artist</td>
+				<td class="value">{% if status['artist'] is defined %}{{status['artist']}}{% else %}N/A{% endif %}</td>
+			</tr>
+			<tr>
+				<td class="key">title</td>
+				<td class="value">{% if status['title'] is defined %}{{status['title']}}{% else %}N/A{% endif %}{% if status['duration'] is defined %} <span class="extrainfo">({{status['duration']}})</span>{% endif %}</td>
+			</tr>
+			<tr>
+				<td class="key">album</td>
+				<td class="value">{% if status['album'] is defined %}{{status['album']}} {% if status['date'] is defined %}<span class="extrainfo">({{status['date']}})</span>{% endif %}{% else %}N/A{% endif %}</td>
+				
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
