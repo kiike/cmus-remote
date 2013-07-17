@@ -23,7 +23,6 @@ Installation
 ------------
 
 0. Requirements:
-
     - Python
     - Flask
     - Werkzeug
@@ -32,17 +31,13 @@ Installation
 1. Clone this repo to the destination of your choosing.
 
 2. Customise `frontend.py` according to your taste:
-
     - Cmus() takes a `user` parameter, which is the user that is running
     C*mus. Note that you need write access to talk to the socket.
-    
     - If you call the app from within a python interpreter, it will
     listen on the port specified in the last line of the file.
     
 3. Run the application:
-
     - from an WSGI service such as UWSGI.
-
     - from a python interpreter.
 
 License
