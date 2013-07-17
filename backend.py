@@ -8,13 +8,14 @@ import socket
 
 
 class Cmus(object):
-    def __init__(self):
+    def __init__(self, user='kiike'):
         """
         Sets the only important variable here, which is the
         location of the cmus socket.
         """
 
-        self.socket_path = os.path.join('/home/kiike/',
+        self.socket_path = os.path.join('/home/',
+                                        user,
                                         '.cmus',
                                         'socket')
 
