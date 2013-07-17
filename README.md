@@ -4,7 +4,20 @@ cmus-remote
 Description
 -----------
 
-cmus-remote small Flask app that acts as a remote control for C*mus. It shows the current playing tracks, as well as allowing the user to play, pause or skip tracks. As a Python app, it contains the `backend.py` file, which can be imported in a different Python script.
+cmus-remote small Flask app that acts as a remote control for C*mus. It
+shows the current playing tracks, as well as allowing the user to play,
+pause or skip tracks. As a Python app, it contains the `backend.py`
+file, which can be imported in a different Python script.
+
+The motivation to write this was to learn Python classes, interfacing to
+sockets, and developing a small Flask application that could be deployed
+to my Raspberry Pi (which is the machine running our favorite music
+player).
+
+This is a recent screenshot. Note that I'm not a UI designer as you can
+see:
+
+![a cmus-remote screenshot](screenshot.png)
 
 Installation
 ------------
