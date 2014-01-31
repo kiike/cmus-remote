@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template
 from backend import Cmus
 
 cmus = Cmus()
@@ -7,7 +6,7 @@ app = Flask(__name__)
 
 # Options {{{
 app.debug = True
-path = '/cr'
+path = ''
 #}}}
 
 
