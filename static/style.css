@@ -24,4 +24,6 @@ td.value { font-size: 1em; margin-top: 1em;}
 
 .extrainfo { font-size: 0.9em; color: #333333;}
 
-#actions_list li { display: inline; list-style-type: none; padding-right: 20px; }
+#actions_list li { display: inline; list-style: none;}
+ul#actions_list { margin:0; text-align: center; }
+
