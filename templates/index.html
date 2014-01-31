@@ -25,7 +25,7 @@
 	<div id="actions_container">
 		<ul id="actions_list">
 			{% for action in actions %}
-			<li><a href="{{path}}/{{action}}">{% if action == hilite %}<span class="hilite">{{action}}</span>{% else %}{{action}}{% endif %}</a></li>
+			<li><a href="/{{action}}">{% if action == hilite %}<span class="hilite">{{action}}</span>{% else %}{{action}}{% endif %}</a></li>
 			{% endfor %}
 		</ul>
 	</div>
