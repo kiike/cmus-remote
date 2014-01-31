@@ -14,7 +14,7 @@ td#title { text-align: center; text-transform: uppercase; background: #377BA8; }
 td.key   { text-align: right; color: #333333; padding-right: 1em;}
 td.value { font-size: 1em; margin-above: 1em;}
 
-.hilite { text-decoration: blink; }
+.hilite { font-weight: bold; }
 
 .extrainfo { font-size: 0.9em; color: #333333;}
 
