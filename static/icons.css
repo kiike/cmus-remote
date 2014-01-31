@@ -1,0 +1,29 @@
+@font-face {
+	font-family: 'fontello';
+	src: url('icons.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	display: inline-block;
+	font-family: "fontello";
+	font-size:2em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 2.3em;
+	margin-left: .2em;
+	margin-right: .2em;
+	speak: none;
+	text-align: center;
+	text-decoration: inherit;
+	text-transform: none;
+	width: 1em;
+}
+
+.icon-play:before  { content: '\e800'; }
+.icon-stop:before  { content: '\e801'; }
+.icon-pause:before { content: '\e802'; }
+.icon-next:before  { content: '\e803'; }
+.icon-prev:before  { content: '\e804'; }

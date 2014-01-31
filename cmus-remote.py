@@ -18,17 +18,15 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     if cmus.is_socket_alive():
-        actions = ['prev', 'play', 'pause', 'stop', 'next']
+        actions = ['prev', 'play', 'pause', 'next']
         status = cmus.status()
 
-        if status['paused']:
+        if status['paused'] or status['stopped']:
             hilite = "pause"
-        elif status['playing']:
-            hilite = "play"
-        elif status['stopped']:
-            hilite = "stop"
+            actions.pop(actions.index('play'))
         else:
-            hilite = None
+            hilite = "play"
+            actions.pop(actions.index('pause'))
 
         return render_template('index.html',
                                actions=actions,

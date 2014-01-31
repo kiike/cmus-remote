@@ -1,18 +1,24 @@
-body            { font-family: sans-serif; background: #eee; }
-a, h1, h2       { color: #377BA8; }
-h1, h2          { font-family: 'Georgia', serif; margin: 0; }
-h1              { border-bottom: 2px solid #eee; }
-h2              { font-size: 1.2em; }
-p 		{ width: 28em; }
+body {
+	font-family: sans-serif;
+	background: #eee;
+	margin: 0 auto;
+	width: 24em;
+}
 
-.error          { width: 28em; background: #F0D6D6; padding: 0.5em; }
+a, h1, h2 { color: #377BA8; }
+h1, h2    { font-family: sans-serif, serif; margin: 0; }
+h1        { border-bottom: 2px solid #eee; }
+h2        { font-size: 1.2em; }
+p 	  { width: 28em; }
 
-.message { text-align: center; color: #00AA00; }
+.error    { width: 28em; background: #F0D6D6; padding: 0.5em; }
+
+.message  { text-align: center; color: #00AA00; }
 
 #status_table { border: 3px #377BA8 solid; width: 24em; border-spacing: 0em}
 td#title { text-align: center; text-transform: uppercase; background: #377BA8; }
 td.key   { text-align: right; color: #333333; padding-right: 1em;}
-td.value { font-size: 1em; margin-above: 1em;}
+td.value { font-size: 1em; margin-top: 1em;}
 
 .hilite { font-weight: bold; }
 

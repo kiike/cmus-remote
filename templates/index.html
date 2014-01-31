@@ -1,23 +1,17 @@
-<!DOCTYPE HTML
-     PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>cmus Remote</title>
-   {% if message is defined %}
-   <meta HTTP-EQUIV="REFRESH" content="1; url=..">
-   {% else %}
-   <meta HTTP-EQUIV="REFRESH" content="10">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   {% if message is defined %}<meta http-equiv="REFRESH" content="1; url=..">
+   {% else %}<meta http-equiv="REFRESH" content="10">
    {% endif %}
-   <link rel="stylesheet" type="text/css" href="{{path}}/static/style.css">
+
+   <link rel="stylesheet" type="text/css" href="/static/style.css">
+   <link rel="stylesheet" type="text/css" href="/static/icons.css">
 </head>
 <body>
 	<h1>cmus Remote</h1>
-
-	<div id="intro">
-		<p>Welcome to the cmus Remote! With this small application,
-		you can control the status of our favorite music player. Click any of
-		the following links to control cmus.</p>
-	</div>
 
 	{% if message is defined %}
 	<div class="message"><p>{{message}}<p></div>
@@ -25,10 +19,11 @@
 	<div id="actions_container">
 		<ul id="actions_list">
 			{% for action in actions %}
-			<li><a href="/{{action}}">{% if action == hilite %}<span class="hilite">{{action}}</span>{% else %}{{action}}{% endif %}</a></li>
+			<li><a href="/{{action}}">{% if action == hilite %}<span class="hilite"><i class="icon-{{action}}"></i></span>{% else %}<i class="icon-{{action}}"></i>{% endif %}</a></li>
 			{% endfor %}
 		</ul>
 	</div>
+
 	{% endif %}
 
 	<div id="status_container">
