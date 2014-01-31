@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# cmus-remote, your own cmus remote control you can access
+# from everywhere.
+# Uncopyrighted. Enric Morales 2014
+
 from flask import Flask, render_template
 from backend import Cmus
 
