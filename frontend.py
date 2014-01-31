@@ -38,14 +38,14 @@ def index():
 def do_action(action):
     if cmus.is_socket_alive():
         status = cmus.status()
-        actions = {'prev': 'cmus.prev()',
-                   'play': 'cmus.play()',
-                   'next': 'cmus.nnext()',
-                   'pause': 'cmus.pause()',
-                   'stop': 'cmus.stop()'}
+        actions = {'prev': cmus.prev,
+                   'play': cmus.play,
+                   'next': cmus.nnext,
+                   'pause': cmus.pause,
+                   'stop': cmus.stop}
 
         if action in actions:
-            message = eval(actions[action])
+            message = actions[action]()
         else:
             message = "No such action '%s'" % action
 
