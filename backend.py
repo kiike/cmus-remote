@@ -99,9 +99,9 @@ class Cmus(object):
         self.send_socket_cmd("player-pause")
 
         if self.is_paused():
-            return 'playing'
-        else:
             return 'paused'
+        else:
+            return 'playing'
 
     def stop(self):
         """
@@ -109,7 +109,7 @@ class Cmus(object):
         """
 
         if not self.is_stopped():
-            self.send_socket_cmd("player-stop")
+            self.send_socket_cmd('player-stop')
             return 'stopped'
         else:
             return 'already stopped'
@@ -119,7 +119,7 @@ class Cmus(object):
         Sends the 'player-next' command over the socket.
         """
 
-        self.send_socket_cmd("player-next")
+        self.send_socket_cmd('player-next')
         return 'next track'
 
     def status(self):
@@ -130,7 +130,7 @@ class Cmus(object):
         """
 
         output = {}
-        status = self.send_socket_cmd("status", rx=4096)
+        status = self.send_socket_cmd('status', rx=4096)
         tags = re.findall(r'tag (\w+) (.*)\n', status, re.MULTILINE)
         duration = re.findall(r'duration (\w+)', status, re.MULTILINE)
         output = {k: v for k, v in tags}
