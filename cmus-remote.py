@@ -5,15 +5,14 @@
 
 from flask import Flask, render_template
 from backend import Cmus
+from ConfigParser import ConfigParser
 
 cmus = Cmus()
 app = Flask(__name__)
 
-# Options {{{
-app.debug = True
-path = ''
-#}}}
-
+config = ConfigParser()
+config.read('cmus-remote.ini')
+path = config.get('main', 'path')
 
 @app.route("/")
 def index():
@@ -63,3 +62,4 @@ def do_action(action):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
+    app.debug = True
