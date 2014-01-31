@@ -8,13 +8,13 @@ from socket import socket, AF_UNIX, SOCK_STREAM
 
 
 class Cmus(object):
-    def __init__(self):
+    def __init__(self, user):
         """
         Sets the only important variable here, which is the
         location of the cmus socket.
         """
 
-        self.socket_path = path.join(getenv('HOME'),
+        self.socket_path = path.join(path.expanduser('~' + user),
                                      '.cmus',
                                      'socket')
 

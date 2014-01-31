@@ -7,12 +7,14 @@ from flask import Flask, render_template
 from backend import Cmus
 from ConfigParser import ConfigParser
 
-cmus = Cmus()
-app = Flask(__name__)
-
 config = ConfigParser()
 config.read('cmus-remote.ini')
-path = config.get('main', 'path')
+base_url = config.get('main', 'base_url')
+user = config.get('main', 'user')
+
+cmus = Cmus(user)
+app = Flask(__name__)
+
 
 @app.route("/")
 def index():
@@ -32,7 +34,7 @@ def index():
         return render_template('index.html',
                                actions=actions,
                                hilite=hilite,
-                               path=path,
+                               path=base_url,
                                status=status)
     else:
         return render_template('error.html')
