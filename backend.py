@@ -96,13 +96,11 @@ class Cmus(object):
         Sends the 'pause' command over the socket.
         """
 
-        print self.is_paused()
+        self.send_socket_cmd("player-pause")
 
         if self.is_paused():
-            self.send_socket_cmd("player-pause")
             return 'playing'
         else:
-            self.send_socket_cmd("player-pause")
             return 'paused'
 
     def stop(self):
