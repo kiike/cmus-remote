@@ -9,7 +9,6 @@ from ConfigParser import ConfigParser
 
 config = ConfigParser()
 config.read('cmus-remote.ini')
-base_url = config.get('main', 'base_url')
 user = config.get('main', 'user')
 
 cmus = Cmus(user)
@@ -34,7 +33,6 @@ def index():
         return render_template('index.html',
                                actions=actions,
                                hilite=hilite,
-                               path=base_url,
                                status=status)
     else:
         return render_template('error.html')
@@ -57,11 +55,10 @@ def do_action(action):
 
         return render_template('index.html',
                                status=status,
-                               path=path,
                                message=message)
     else:
         return render_template('error.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
     app.debug = True
+    app.run(host='0.0.0.0', port=8080)
