@@ -3,8 +3,8 @@
 # by Enric Morales. Uncopyrighted, 2013
 
 import re
-import os
-import socket
+from os import getenv, path
+from socket import socket, AF_UNIX, SOCK_STREAM
 
 
 class Cmus(object):
@@ -14,9 +14,9 @@ class Cmus(object):
         location of the cmus socket.
         """
 
-        self.socket_path = os.path.join(os.getenv('HOME'),
-                                        '.cmus',
-                                        'socket')
+        self.socket_path = path.join(getenv('HOME'),
+                                     '.cmus',
+                                     'socket')
 
     def send_socket_cmd(self, cmd, rx=0):
         """
@@ -25,7 +25,7 @@ class Cmus(object):
         than 0.
         """
 
-        s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+        s = socket(AF_UNIX, SOCK_STREAM)
         s.connect(self.socket_path)
 
         if s.send((cmd + "\n").encode("ascii")) == 0:
@@ -171,7 +171,7 @@ class Cmus(object):
         and False otherwise.
         """
 
-        s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+        s = socket(AF_UNIX, SOCK_STREAM)
 
         try:
             s.connect(self.socket_path)
