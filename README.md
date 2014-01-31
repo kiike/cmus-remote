@@ -23,25 +23,25 @@ Installation
 ------------
 
 0. Requirements:
-    - Python
-    - Flask
-    - Werkzeug
-    - Jinja2
+    - [Python 2.7](http://python.org)
+    - [Flask](http://flask.pocoo.org)
+    - [Werkzeug](http://werkzeug.pocoo.org)
+    - [Jinja2](http://jinja.pocoo.org/)
+    - [cmus](http://cmus.sf.net)
 
 1. Clone this repo to the destination of your choosing.
 
-2. Customise `frontend.py` according to your taste:
+2. Customise `cmus-remote.ini` according to your taste:
     - Cmus() takes a `user` parameter, which is the user that is running
     C*mus. Note that you need write access to talk to the socket.
     - If you call the app from within a python interpreter, it will
     listen on the port specified in the last line of the file.
-    
+
 3. Run the application:
     - from an WSGI service such as UWSGI.
-    - from a python interpreter.
+    - from a python interpreter (it will listen on `localhost:8080` by default.
 
 License
 -------
 
-This app is uncopyrighted. Feel free to do with it whatever you please.
-I am still a Python newbie so please send corrections or pull requests.
+This app is uncopyrighted. The font (`static/icons.woff`) is [Font Awesome](http://fontawesome.io/), modified by `fontello`. My code (CSS, HTML, Python) is not copyrighted. I did it for fun and to learn Python, so understand it comes with no warranty of any kind. Please do send me tweaks, patches, pull requests, etc.
