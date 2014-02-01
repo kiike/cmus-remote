@@ -1,1 +1,87 @@
+body {
+  font-family : sans-serif;
+  background : #eee;
+  margin : 0 auto;
+  width : 24em
+}
 
+a, h1, h2 {
+  color : #377BA8
+}
+
+h1, h2 {
+  font-family : sans-serif, serif;
+  margin : 0
+}
+
+h1 {
+  border-bottom : 2px solid #eee
+}
+
+h2 {
+  font-size : 1.2em
+}
+
+p {
+  width : 24em
+}
+
+.middle {
+  height : 5em
+}
+
+.error {
+  width : 24em;
+  background : #F0D6D6;
+  padding : 0.5em
+}
+
+.message {
+  text-align : center;
+  font-size : 1.1000000000000001em;
+  color : #00AA00;
+  padding-top : 2em;
+  margin : 0
+}
+
+#status_table {
+  border : 2px #377BA8 solid;
+  width : 24em;
+  border-spacing : 0em
+}
+
+td#title {
+  text-align : center;
+  text-transform : uppercase;
+  background : #377BA8
+}
+
+td.key {
+  text-align : right;
+  color : #333333;
+  padding-right : 1em
+}
+
+td.value {
+  font-size : 1em;
+  margin-top : 1em
+}
+
+.hilite {
+  font-weight : bold
+}
+
+.extrainfo {
+  font-size : 0.90000000000000002em;
+  color : #333333
+}
+
+#actions_list li {
+  display : inline;
+  list-style : none
+}
+
+ul#actions_list {
+  margin : 0;
+  text-align : center
+}
