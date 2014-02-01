@@ -3,7 +3,7 @@
 # by Enric Morales. Uncopyrighted, 2013
 
 import re
-from os import getenv, path
+from os import path
 from socket import socket, AF_UNIX, SOCK_STREAM
 
 
@@ -89,7 +89,7 @@ class Cmus(object):
             self.send_socket_cmd('player-play')
             return 'playing'
         else:
-            return 'already playing'
+            return self.pause()
 
     def pause(self):
         """

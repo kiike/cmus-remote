@@ -22,11 +22,11 @@ def index():
         status = cmus.status()
 
         if status['paused'] or status['stopped']:
-            hilite = "pause"
-            actions.pop(actions.index('play'))
-        else:
             hilite = "play"
             actions.pop(actions.index('pause'))
+        else:
+            hilite = "pause"
+            actions.pop(actions.index('play'))
 
         return render_template('index.html',
                                actions=actions,
